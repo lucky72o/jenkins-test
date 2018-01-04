@@ -103,7 +103,7 @@ node {
         }
 
         stage('Build') {
-            sh "./gradlew ${gradleDefaultSwitches} clean build ${gradleAdditionalTestTargets} ${gradleAdditionalSwitches} --refresh-dependencies"
+            sh "./mvnw clean package"
             step $class: 'JUnitResultArchiver', testResults: '**/TEST-*.xml'
 
             populateGlobalVariables()
