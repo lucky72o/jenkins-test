@@ -15,6 +15,7 @@
  */
 package hello;
 
+import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -55,5 +56,10 @@ public class GreetingControllerTests {
     @Test
     public void aaa() throws Exception {
 
+    }
+
+    @Test
+    public void failedTest() throws Exception {
+        fail();
     }
 }
